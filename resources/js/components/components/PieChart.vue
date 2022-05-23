@@ -1,0 +1,51 @@
+<script>
+import { Line } from 'vue-chartjs';
+
+export default {
+   extends: Line,
+   mounted() {
+          this.gradient = this.$refs.canvas
+      .getContext("2d")
+      .createLinearGradient(0, 0, 0, 450);
+    this.gradient2 = this.$refs.canvas
+      .getContext("2d")
+      .createLinearGradient(0, 0, 0, 450);
+
+    this.gradient.addColorStop(0, "rgba(255, 0,0, 0.5)");
+    this.gradient.addColorStop(0.5, "rgba(255, 0, 0, 0.25)");
+    this.gradient.addColorStop(1, "rgba(255, 0, 0, 0)");
+
+    this.gradient2.addColorStop(0, "rgba(0, 231, 255, 0.9)");
+    this.gradient2.addColorStop(0.5, "rgba(0, 231, 255, 0.25)");
+    this.gradient2.addColorStop(1, "rgba(0, 231, 255, 0)");
+   
+         let uri = 'http://omsv4.com/curr_mnth_piedata';
+         let VPrices = 0;
+         let DPrices = 0;
+         let PPrices = 0;
+         this.axios.get(uri).then((response) => {
+            let data = response.data;
+            console.log(data);
+            if(data) {
+               data.forEach(element => {
+               PPrices=element.photoprice;
+               VPrices=element.vectprice;
+              // Digiday.push(element.dday);
+               DPrices=element.digiprice;
+              
+
+               });
+               console.log(Vectday);
+               this.renderChart({
+               labels: ["Vector", "Digitize", "Photoshop"],
+               datasets: [  VPrices, DPrices, PPrices  ]            ]
+         }, {responsive: true, maintainAspectRatio: false})
+       }
+       else {
+          console.log('No data');
+       }
+      });            
+   }
+}
+
+</script>

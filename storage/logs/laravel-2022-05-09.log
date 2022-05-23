@@ -1,0 +1,571 @@
+[2022-05-09 20:23:46] local.ERROR: Undefined variable: companydeatil {"exception":"[object] (ErrorException(code: 0): Undefined variable: companydeatil at /var/www/omsv4-2.com/app/Http/Controllers/Api/CwordpressController.php:233)
+[stacktrace]
+#0 /var/www/omsv4-2.com/app/Http/Controllers/Api/CwordpressController.php(233): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/omsv4-...', 233, Array)
+#1 [internal function]: App\\Http\\Controllers\\Api\\CwordpressController->orderdetailapi(Object(Illuminate\\Http\\Request))
+#2 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#3 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('orderdetailapi', Array)
+#4 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\CwordpressController), 'orderdetailapi')
+#5 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
+#7 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#9 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#10 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(58): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#13 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#16 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#17 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#18 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#19 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#20 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#21 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /var/www/omsv4-2.com/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 /var/www/omsv4-2.com/public/index.php(59): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 {main}
+"} 
+[2022-05-09 20:24:12] local.ERROR: Undefined variable: companydeatil {"exception":"[object] (ErrorException(code: 0): Undefined variable: companydeatil at /var/www/omsv4-2.com/app/Http/Controllers/Api/CwordpressController.php:233)
+[stacktrace]
+#0 /var/www/omsv4-2.com/app/Http/Controllers/Api/CwordpressController.php(233): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/omsv4-...', 233, Array)
+#1 [internal function]: App\\Http\\Controllers\\Api\\CwordpressController->orderdetailapi(Object(Illuminate\\Http\\Request))
+#2 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#3 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('orderdetailapi', Array)
+#4 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\CwordpressController), 'orderdetailapi')
+#5 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
+#7 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#9 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#10 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(58): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#13 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#16 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#17 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#18 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#19 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#20 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#21 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /var/www/omsv4-2.com/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 /var/www/omsv4-2.com/public/index.php(59): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 {main}
+"} 
+[2022-05-09 20:24:44] local.ERROR: Undefined variable: companydeatil {"exception":"[object] (ErrorException(code: 0): Undefined variable: companydeatil at /var/www/omsv4-2.com/app/Http/Controllers/Api/CwordpressController.php:233)
+[stacktrace]
+#0 /var/www/omsv4-2.com/app/Http/Controllers/Api/CwordpressController.php(233): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/omsv4-...', 233, Array)
+#1 [internal function]: App\\Http\\Controllers\\Api\\CwordpressController->orderdetailapi(Object(Illuminate\\Http\\Request))
+#2 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#3 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('orderdetailapi', Array)
+#4 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\CwordpressController), 'orderdetailapi')
+#5 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
+#7 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#9 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#10 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(58): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#13 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#16 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#17 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#18 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#19 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#20 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#21 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /var/www/omsv4-2.com/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 /var/www/omsv4-2.com/public/index.php(59): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 {main}
+"} 
+[2022-05-09 21:39:41] local.ERROR: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'old_notes' at row 1 (SQL: insert into `file_reason` (`target_date`, `old_notes`, `new_notes`, `mistake_by`, `reason`, `order_id`, `order_master_id`, `order_child_id`, `last_status`, `user_id`, `user_name`, `designer`, `teamleader`, `updated_at`, `created_at`) values (2022/05/10 02:00, NEW.PDR#3 / / /USE FOR ART NEW PDF#3 FOR THE BOTTON FONT ****LOCO_LANCE******OR IF YOU CAN DESIGN WITH YOUR ABILITIES BETTER MAKE BATTER IF POSSIBLE
+
+
+
+
+
+PDF#1 ……= SAVE AS FINAL .. LOCO_LANCE#!.PDF……))))))))
+
+Your company created the vector artwork for this image, I must have the artwork saved into CS6 , CS10 also into the latest version for 2022.
+
+I must be sent back all files as always .ESP . AI & pdf  please .
+
+PDF #2 = Directions : PDF #2 the octopus is correct only the lines on the head need to be placed onto PDF #! …..Please take the vector octopus black lines from the head of PDF#2 and put the Black Lines from the head only from the head of the octopus & put them onto pdf#1 and then pdf#2 can be deleted.
+
+PDF#! = Directions ( make the eye of the octopus clean like the eye on the fish of this PDF #1 you have opened up now and look at the eye of the fish **** ( do not change the shape of the octopuses eye, ) but please make the Octopuses EYE look clean like you created the eye of the fish when I asked for this to be created into vector art as the Eye on there OCTOPUS is not clean looking at all compared to the fish eye on the same PDF #1.
+So again to be clear ( I want the eye of the octopus to be cleaned up , please look at the eye of the fish its nice and clean correct ? So now please ***do not change the shape of the eye on the octopus **** but make the eye and the lines that are around the eye area of the octopus on this PDF#1 that you have opened up and you are working on now please clean octopuses eye and lines which is area around the eye the octopus …
+
+*** Screen shot image attached directions *** CREATE the new font that I made @Loco_Lance as the ( _ ) must be in the middle of the characters hand to the correct and that anyone that reads this knows how to find me on the instagram also please make PDF#1 finished save as vector PDF #! >>>>> thanks 
+
+*******This will be the final vector file when you have all these changes made thats why I called it PDF #1 *****please let me know if you understand these directions. …... thanks,
+
+
+
+
+
+Call this files ****!!!!!!!!!) PDF#1 ( A ) .PDF……….. ****!!!!!! please use PDF #1 = to create PDF #! (A)********
+
+ADD the smoke to the left coming off the { ALL WHITE CIGARETTE ___LOOK HOW I CREATED IT >>>> white cigarette = use the image attached ( I LOVE NYC ) man smoking in subway car>>>> ( USE THIS SMOKE ITS VECTOR YOU CREATED IT UNDERSTAND ) ? as the smoke is already ( VECTOR ) you can put white into into the smoke if you have some of our artistic abilities to tr vector smoke from the attached character is smoking,,,, (((( FROM I LOVE NYC )))))! ******** Make the smoke come up the the height of the top of the font in blue LOCOOANCE.COM ……….( PLEASE TAKE OF THE TOP ** BLUE FONT reading LOCOLANCE.COM…... this is now done ….SAVE THIS aa******* PDF#1 ( A ) .PDF
+
+PDF#1 ( A ) .PDF
+
+
+!!!!!!!!!!!!!!NOW GO BACK TO PDF#1 ………*******TAKE OFF THE BLUE FONT READING ( ((((((( LOCOLANCE.COM))))))********save file as PDF#1.A.PDF <br />Changes #notes:use this exact body:face:finger font other features:fix only octopus to look like pdf#2 w:black lines on the head of octopus, make eye of octopus clean like eye of fish dont change eye shape on octopus of pdf#1
+
+this image attached is the correct body to use for all the changes discussed by accident you use the wrong body .
+
+Also i nee a separate file without the logo lance on the bottom of the main character
+
+***Can you please make the smoke come up higher like in the NYC image I sent you to the top of head almost?
+
+The ( @loco_lance ) I I please need as a file by itself to use for other items I produce..
+
+Also can you please provide the font as I need to make a slogan
+into vector ...THe slogan is *****
+( BAD ASS MOTHER FUCKER )<br />, use this exact body:face:finger font other features:fix only octopus to look like pdf#2 w:black lines on the head of octopus, make eye of octopus clean like eye of fish dont change eye shape on octopus of pdf#1
+
+this image attached is the correct body to use for all the changes discussed by accident you use the wrong body .
+
+Also i nee a separate file without the logo lance on the bottom of the main character
+
+***Can you please make the smoke come up higher like in the NYC image I sent you to the top of head almost?
+
+The ( @loco_lance ) I I please need as a file by itself to use for other items I produce..
+
+Also can you please provide the font as I need to make a slogan
+into vector ...THe slogan is *****
+( BAD ASS MOTHER FUCKER ), 0, Old Price: 10.00<br />Add Price: 0<br />File Price: 10, PO202205060147, ?, ?, Changes, 380, Varun Pahilajani, ?, ?, 2022-05-09 21:39:41, 2022-05-09 21:39:41)) {"userId":380,"exception":"[object] (Illuminate\\Database\\QueryException(code: 22001): SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'old_notes' at row 1 (SQL: insert into `file_reason` (`target_date`, `old_notes`, `new_notes`, `mistake_by`, `reason`, `order_id`, `order_master_id`, `order_child_id`, `last_status`, `user_id`, `user_name`, `designer`, `teamleader`, `updated_at`, `created_at`) values (2022/05/10 02:00, NEW.PDR#3 / / /USE FOR ART NEW PDF#3 FOR THE BOTTON FONT ****LOCO_LANCE******OR IF YOU CAN DESIGN WITH YOUR ABILITIES BETTER MAKE BATTER IF POSSIBLE
+
+
+
+
+
+PDF#1 ……= SAVE AS FINAL .. LOCO_LANCE#!.PDF……))))))))
+
+Your company created the vector artwork for this image, I must have the artwork saved into CS6 , CS10 also into the latest version for 2022.
+
+I must be sent back all files as always .ESP . AI & pdf  please .
+
+PDF #2 = Directions : PDF #2 the octopus is correct only the lines on the head need to be placed onto PDF #! …..Please take the vector octopus black lines from the head of PDF#2 and put the Black Lines from the head only from the head of the octopus & put them onto pdf#1 and then pdf#2 can be deleted.
+
+PDF#! = Directions ( make the eye of the octopus clean like the eye on the fish of this PDF #1 you have opened up now and look at the eye of the fish **** ( do not change the shape of the octopuses eye, ) but please make the Octopuses EYE look clean like you created the eye of the fish when I asked for this to be created into vector art as the Eye on there OCTOPUS is not clean looking at all compared to the fish eye on the same PDF #1.
+So again to be clear ( I want the eye of the octopus to be cleaned up , please look at the eye of the fish its nice and clean correct ? So now please ***do not change the shape of the eye on the octopus **** but make the eye and the lines that are around the eye area of the octopus on this PDF#1 that you have opened up and you are working on now please clean octopuses eye and lines which is area around the eye the octopus …
+
+*** Screen shot image attached directions *** CREATE the new font that I made @Loco_Lance as the ( _ ) must be in the middle of the characters hand to the correct and that anyone that reads this knows how to find me on the instagram also please make PDF#1 finished save as vector PDF #! >>>>> thanks 
+
+*******This will be the final vector file when you have all these changes made thats why I called it PDF #1 *****please let me know if you understand these directions. …... thanks,
+
+
+
+
+
+Call this files ****!!!!!!!!!) PDF#1 ( A ) .PDF……….. ****!!!!!! please use PDF #1 = to create PDF #! (A)********
+
+ADD the smoke to the left coming off the { ALL WHITE CIGARETTE ___LOOK HOW I CREATED IT >>>> white cigarette = use the image attached ( I LOVE NYC ) man smoking in subway car>>>> ( USE THIS SMOKE ITS VECTOR YOU CREATED IT UNDERSTAND ) ? as the smoke is already ( VECTOR ) you can put white into into the smoke if you have some of our artistic abilities to tr vector smoke from the attached character is smoking,,,, (((( FROM I LOVE NYC )))))! ******** Make the smoke come up the the height of the top of the font in blue LOCOOANCE.COM ……….( PLEASE TAKE OF THE TOP ** BLUE FONT reading LOCOLANCE.COM…... this is now done ….SAVE THIS aa******* PDF#1 ( A ) .PDF
+
+PDF#1 ( A ) .PDF
+
+
+!!!!!!!!!!!!!!NOW GO BACK TO PDF#1 ………*******TAKE OFF THE BLUE FONT READING ( ((((((( LOCOLANCE.COM))))))********save file as PDF#1.A.PDF <br />Changes #notes:use this exact body:face:finger font other features:fix only octopus to look like pdf#2 w:black lines on the head of octopus, make eye of octopus clean like eye of fish dont change eye shape on octopus of pdf#1
+
+this image attached is the correct body to use for all the changes discussed by accident you use the wrong body .
+
+Also i nee a separate file without the logo lance on the bottom of the main character
+
+***Can you please make the smoke come up higher like in the NYC image I sent you to the top of head almost?
+
+The ( @loco_lance ) I I please need as a file by itself to use for other items I produce..
+
+Also can you please provide the font as I need to make a slogan
+into vector ...THe slogan is *****
+( BAD ASS MOTHER FUCKER )<br />, use this exact body:face:finger font other features:fix only octopus to look like pdf#2 w:black lines on the head of octopus, make eye of octopus clean like eye of fish dont change eye shape on octopus of pdf#1
+
+this image attached is the correct body to use for all the changes discussed by accident you use the wrong body .
+
+Also i nee a separate file without the logo lance on the bottom of the main character
+
+***Can you please make the smoke come up higher like in the NYC image I sent you to the top of head almost?
+
+The ( @loco_lance ) I I please need as a file by itself to use for other items I produce..
+
+Also can you please provide the font as I need to make a slogan
+into vector ...THe slogan is *****
+( BAD ASS MOTHER FUCKER ), 0, Old Price: 10.00<br />Add Price: 0<br />File Price: 10, PO202205060147, ?, ?, Changes, 380, Varun Pahilajani, ?, ?, 2022-05-09 21:39:41, 2022-05-09 21:39:41)) at /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, Doctrine\\DBAL\\Driver\\PDO\\Exception(code: 22001): SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'old_notes' at row 1 at /var/www/omsv4-2.com/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Exception.php:18, PDOException(code: 22001): SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'old_notes' at row 1 at /var/www/omsv4-2.com/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:112)
+[stacktrace]
+#0 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('insert into `fi...', Array, Object(Closure))
+#1 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Connection.php(459): Illuminate\\Database\\Connection->run('insert into `fi...', Array, Object(Closure))
+#2 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Connection.php(411): Illuminate\\Database\\Connection->statement('insert into `fi...', Array)
+#3 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(32): Illuminate\\Database\\Connection->insert('insert into `fi...', Array)
+#4 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2690): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId(Object(Illuminate\\Database\\Query\\Builder), 'insert into `fi...', Array, 'id')
+#5 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1353): Illuminate\\Database\\Query\\Builder->insertGetId(Array, 'id')
+#6 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(839): Illuminate\\Database\\Eloquent\\Builder->__call('insertGetId', Array)
+#7 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(804): Illuminate\\Database\\Eloquent\\Model->insertAndSetId(Object(Illuminate\\Database\\Eloquent\\Builder), Array)
+#8 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(667): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#9 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(795): Illuminate\\Database\\Eloquent\\Model->save()
+#10 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Support/helpers.php(1124): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}(Object(App\\Models\\FileReason))
+#11 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(796): tap(Object(App\\Models\\FileReason), Object(Closure))
+#12 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create(Array)
+#13 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1618): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'create', Array)
+#14 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1630): Illuminate\\Database\\Eloquent\\Model->__call('create', Array)
+#15 /var/www/omsv4-2.com/app/Http/Controllers/OrderController.php(5135): Illuminate\\Database\\Eloquent\\Model::__callStatic('create', Array)
+#16 [internal function]: App\\Http\\Controllers\\OrderController->updateorderstatus(Object(Illuminate\\Http\\Request))
+#17 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#18 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('updateorderstat...', Array)
+#19 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\OrderController), 'updateorderstat...')
+#20 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#21 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
+#22 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(56): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#39 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#42 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#45 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#46 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#47 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#48 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#49 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#50 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#52 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#55 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#56 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#57 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#58 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#59 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#60 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#61 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#62 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#63 /var/www/omsv4-2.com/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#64 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#65 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#66 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#67 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#68 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#69 /var/www/omsv4-2.com/public/index.php(59): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#70 {main}
+"} 
+[2022-05-09 22:42:59] local.ERROR: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'old_notes' at row 1 (SQL: insert into `file_reason` (`target_date`, `old_notes`, `new_notes`, `mistake_by`, `reason`, `order_id`, `order_master_id`, `order_child_id`, `last_status`, `user_id`, `user_name`, `designer`, `teamleader`, `updated_at`, `created_at`) values (2022/05/10 03:00, I have sent you this picture I need this picture remade. The picture below is the original picture I need to take this picture and edit it to what I need it to be done. I need this picture back to rise in size to be a postcard 4 x 6. I need to turn this into a postcard so it must be clean crisp and vectorize.
+
+Here in this picture I have sent you the edits of what I need please let’s go through the details and read them carefully.
+
+1. I need to remove all the words that are on the postcard the words meaning the ones that are at the bottom and the artist name who drew it. I have scratched those out in red. Everything that you see in red I need to take off the flyer completely. There can be no nudity going through the mail so everything you see in red I need it taking off also the 4 girls that are remaining I need to cover their breast they cannot have open breast showing. I have put black lines over them maybe that can be what we can do to cover it.
+
+2. Where all the brown circles are I need to turn those white people into brown people or Black people the color of the people needs to be a little bit darker but not too dark like a brownish color so you can tell they are african American people.
+
+3. The other two girls I want to make them another race as well they can be white girls. Or one can be white and one can have like a peach color to her. I will also put names over each girl I will send you those names. SHIRVELL B. AMY B. DEMI B. JANIA C.
+The head lady here name above her will be LORRAINE.
+Over the guys head I want to put “Your Husband/Boyfriend”
+
+4. I also need to extend it a little bit so I can have time to add words can you start this stuff right here and then we go from there <br />Changes #notes:Here are the edits for the post card photo. 
+1st thing I need the background extended on the top and bottom so we can add words and the picture needs to be a nice size in the middle.
+
+The 2 people the brown people are too dark can you make them a little shade lighter. It’s hard to see there face or hair when it’s so dark.
+
+The name I want them in a nice clear cursive font above each head woman’s head.
+The first girl name needs to be Amy B. 
+The 2nd name should be [YOU]
+The 3rd name should be Demi B.
+The 4th name should be Jania C.
+ 
+The big woman’s name should be Lorraine B. Under it put “Big Mama Benjamins” 
+
+The man’s name should be Your Husband/Boyfriend 
+
+I Need to have room for text boxes. On top bottom and on the side where I circled in black. The red scribble lines are meant to show to add more room on the postcard for text words.<br /> <br />Changes #notes:Ok I think we are not reading what I’m writing and sending examples.
+The names are in the wrong order. 
+The writing is not in cursive like I asked for.
+The guy is still too dark.<br /> <br />Changes #notes:OK this is still not right let me break it down a little bit more so we can get a better understanding can you please read this Word for Word so you can see where I’m coming from. 
+
+First things first I need to spread out and make more room on the postcard meaning there needs to be room up top two right words in there needs to be room at the bottom to write words in and room on the side to write words in. They do not have to be boxes they just have to be room I have highlighted them and box them in yellow till you can see what I am talking about and where I want my words to go. There are four boxes on each side of this cart so I need four blank spaces one on top one on bottom and two on the sides I have also added one box in the middle if you can space apart the two groups of people a little bit so that way when I put the address there the address can go there.
+
+The names are in the wrong position if you’re looking at the card the first person with yellow hair of the first white girl should be Demi B. Then “You” Then AMY B. Then Jania C. Please make the font a little bit bigger so people can read it 
+Also with Lorraine’s name and the other guy make those fonts bigger place to as well.
+
+For box one I want it to say this All in the same font that we currently have on there just big nice size letters so he can be read. These let you should be bigger than the other one.
+BOX 1# Hear Ye’ Here Ye do you want to become a master in cheating
+Can you see yourself telling lies like a pro
+Does infidelity adultery deception and being unfaithful sound like you??
+
+ Box #2 Let us help we can show you how to cheat lie deceive and have affairs just like us don’t worry if there’s kids involved we’ll teach you how to deceive and lie to them too!
+We are rated number one in keeping secrets from our husbands and boyfriends we cheat all the time sometimes in groups and they still don’t know to this day!
+
+BOX #3 We’re just a group of unfaithful women who like collectively as a whole to our men even though they break their backs for us lying to the whole world and keeping an image of happy life happy wife keeps this business going. “Remember a faithful wife is not living life”<br />, OK this is still not right let me break it down a little bit more so we can get a better understanding can you please read this Word for Word so you can see where I’m coming from. 
+
+First things first I need to spread out and make more room on the postcard meaning there needs to be room up top two right words in there needs to be room at the bottom to write words in and room on the side to write words in. They do not have to be boxes they just have to be room I have highlighted them and box them in yellow till you can see what I am talking about and where I want my words to go. There are four boxes on each side of this cart so I need four blank spaces one on top one on bottom and two on the sides I have also added one box in the middle if you can space apart the two groups of people a little bit so that way when I put the address there the address can go there.
+
+The names are in the wrong position if you’re looking at the card the first person with yellow hair of the first white girl should be Demi B. Then “You” Then AMY B. Then Jania C. Please make the font a little bit bigger so people can read it 
+Also with Lorraine’s name and the other guy make those fonts bigger place to as well.
+
+For box one I want it to say this All in the same font that we currently have on there just big nice size letters so he can be read. These let you should be bigger than the other one.
+BOX 1# Hear Ye’ Here Ye do you want to become a master in cheating
+Can you see yourself telling lies like a pro
+Does infidelity adultery deception and being unfaithful sound like you??
+
+ Box #2 Let us help we can show you how to cheat lie deceive and have affairs just like us don’t worry if there’s kids involved we’ll teach you how to deceive and lie to them too!
+We are rated number one in keeping secrets from our husbands and boyfriends we cheat all the time sometimes in groups and they still don’t know to this day!
+
+BOX #3 We’re just a group of unfaithful women who like collectively as a whole to our men even though they break their backs for us lying to the whole world and keeping an image of happy life happy wife keeps this business going. “Remember a faithful wife is not living life”, 0, Old Price: 11.00<br />Add Price: 0<br />File Price: 11, PO202205040043, ?, ?, Changes, 380, Varun Pahilajani, ?, ?, 2022-05-09 22:42:59, 2022-05-09 22:42:59)) {"userId":380,"exception":"[object] (Illuminate\\Database\\QueryException(code: 22001): SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'old_notes' at row 1 (SQL: insert into `file_reason` (`target_date`, `old_notes`, `new_notes`, `mistake_by`, `reason`, `order_id`, `order_master_id`, `order_child_id`, `last_status`, `user_id`, `user_name`, `designer`, `teamleader`, `updated_at`, `created_at`) values (2022/05/10 03:00, I have sent you this picture I need this picture remade. The picture below is the original picture I need to take this picture and edit it to what I need it to be done. I need this picture back to rise in size to be a postcard 4 x 6. I need to turn this into a postcard so it must be clean crisp and vectorize.
+
+Here in this picture I have sent you the edits of what I need please let’s go through the details and read them carefully.
+
+1. I need to remove all the words that are on the postcard the words meaning the ones that are at the bottom and the artist name who drew it. I have scratched those out in red. Everything that you see in red I need to take off the flyer completely. There can be no nudity going through the mail so everything you see in red I need it taking off also the 4 girls that are remaining I need to cover their breast they cannot have open breast showing. I have put black lines over them maybe that can be what we can do to cover it.
+
+2. Where all the brown circles are I need to turn those white people into brown people or Black people the color of the people needs to be a little bit darker but not too dark like a brownish color so you can tell they are african American people.
+
+3. The other two girls I want to make them another race as well they can be white girls. Or one can be white and one can have like a peach color to her. I will also put names over each girl I will send you those names. SHIRVELL B. AMY B. DEMI B. JANIA C.
+The head lady here name above her will be LORRAINE.
+Over the guys head I want to put “Your Husband/Boyfriend”
+
+4. I also need to extend it a little bit so I can have time to add words can you start this stuff right here and then we go from there <br />Changes #notes:Here are the edits for the post card photo. 
+1st thing I need the background extended on the top and bottom so we can add words and the picture needs to be a nice size in the middle.
+
+The 2 people the brown people are too dark can you make them a little shade lighter. It’s hard to see there face or hair when it’s so dark.
+
+The name I want them in a nice clear cursive font above each head woman’s head.
+The first girl name needs to be Amy B. 
+The 2nd name should be [YOU]
+The 3rd name should be Demi B.
+The 4th name should be Jania C.
+ 
+The big woman’s name should be Lorraine B. Under it put “Big Mama Benjamins” 
+
+The man’s name should be Your Husband/Boyfriend 
+
+I Need to have room for text boxes. On top bottom and on the side where I circled in black. The red scribble lines are meant to show to add more room on the postcard for text words.<br /> <br />Changes #notes:Ok I think we are not reading what I’m writing and sending examples.
+The names are in the wrong order. 
+The writing is not in cursive like I asked for.
+The guy is still too dark.<br /> <br />Changes #notes:OK this is still not right let me break it down a little bit more so we can get a better understanding can you please read this Word for Word so you can see where I’m coming from. 
+
+First things first I need to spread out and make more room on the postcard meaning there needs to be room up top two right words in there needs to be room at the bottom to write words in and room on the side to write words in. They do not have to be boxes they just have to be room I have highlighted them and box them in yellow till you can see what I am talking about and where I want my words to go. There are four boxes on each side of this cart so I need four blank spaces one on top one on bottom and two on the sides I have also added one box in the middle if you can space apart the two groups of people a little bit so that way when I put the address there the address can go there.
+
+The names are in the wrong position if you’re looking at the card the first person with yellow hair of the first white girl should be Demi B. Then “You” Then AMY B. Then Jania C. Please make the font a little bit bigger so people can read it 
+Also with Lorraine’s name and the other guy make those fonts bigger place to as well.
+
+For box one I want it to say this All in the same font that we currently have on there just big nice size letters so he can be read. These let you should be bigger than the other one.
+BOX 1# Hear Ye’ Here Ye do you want to become a master in cheating
+Can you see yourself telling lies like a pro
+Does infidelity adultery deception and being unfaithful sound like you??
+
+ Box #2 Let us help we can show you how to cheat lie deceive and have affairs just like us don’t worry if there’s kids involved we’ll teach you how to deceive and lie to them too!
+We are rated number one in keeping secrets from our husbands and boyfriends we cheat all the time sometimes in groups and they still don’t know to this day!
+
+BOX #3 We’re just a group of unfaithful women who like collectively as a whole to our men even though they break their backs for us lying to the whole world and keeping an image of happy life happy wife keeps this business going. “Remember a faithful wife is not living life”<br />, OK this is still not right let me break it down a little bit more so we can get a better understanding can you please read this Word for Word so you can see where I’m coming from. 
+
+First things first I need to spread out and make more room on the postcard meaning there needs to be room up top two right words in there needs to be room at the bottom to write words in and room on the side to write words in. They do not have to be boxes they just have to be room I have highlighted them and box them in yellow till you can see what I am talking about and where I want my words to go. There are four boxes on each side of this cart so I need four blank spaces one on top one on bottom and two on the sides I have also added one box in the middle if you can space apart the two groups of people a little bit so that way when I put the address there the address can go there.
+
+The names are in the wrong position if you’re looking at the card the first person with yellow hair of the first white girl should be Demi B. Then “You” Then AMY B. Then Jania C. Please make the font a little bit bigger so people can read it 
+Also with Lorraine’s name and the other guy make those fonts bigger place to as well.
+
+For box one I want it to say this All in the same font that we currently have on there just big nice size letters so he can be read. These let you should be bigger than the other one.
+BOX 1# Hear Ye’ Here Ye do you want to become a master in cheating
+Can you see yourself telling lies like a pro
+Does infidelity adultery deception and being unfaithful sound like you??
+
+ Box #2 Let us help we can show you how to cheat lie deceive and have affairs just like us don’t worry if there’s kids involved we’ll teach you how to deceive and lie to them too!
+We are rated number one in keeping secrets from our husbands and boyfriends we cheat all the time sometimes in groups and they still don’t know to this day!
+
+BOX #3 We’re just a group of unfaithful women who like collectively as a whole to our men even though they break their backs for us lying to the whole world and keeping an image of happy life happy wife keeps this business going. “Remember a faithful wife is not living life”, 0, Old Price: 11.00<br />Add Price: 0<br />File Price: 11, PO202205040043, ?, ?, Changes, 380, Varun Pahilajani, ?, ?, 2022-05-09 22:42:59, 2022-05-09 22:42:59)) at /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, Doctrine\\DBAL\\Driver\\PDO\\Exception(code: 22001): SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'old_notes' at row 1 at /var/www/omsv4-2.com/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Exception.php:18, PDOException(code: 22001): SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'old_notes' at row 1 at /var/www/omsv4-2.com/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:112)
+[stacktrace]
+#0 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('insert into `fi...', Array, Object(Closure))
+#1 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Connection.php(459): Illuminate\\Database\\Connection->run('insert into `fi...', Array, Object(Closure))
+#2 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Connection.php(411): Illuminate\\Database\\Connection->statement('insert into `fi...', Array)
+#3 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(32): Illuminate\\Database\\Connection->insert('insert into `fi...', Array)
+#4 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2690): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId(Object(Illuminate\\Database\\Query\\Builder), 'insert into `fi...', Array, 'id')
+#5 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1353): Illuminate\\Database\\Query\\Builder->insertGetId(Array, 'id')
+#6 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(839): Illuminate\\Database\\Eloquent\\Builder->__call('insertGetId', Array)
+#7 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(804): Illuminate\\Database\\Eloquent\\Model->insertAndSetId(Object(Illuminate\\Database\\Eloquent\\Builder), Array)
+#8 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(667): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#9 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(795): Illuminate\\Database\\Eloquent\\Model->save()
+#10 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Support/helpers.php(1124): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}(Object(App\\Models\\FileReason))
+#11 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(796): tap(Object(App\\Models\\FileReason), Object(Closure))
+#12 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create(Array)
+#13 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1618): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'create', Array)
+#14 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1630): Illuminate\\Database\\Eloquent\\Model->__call('create', Array)
+#15 /var/www/omsv4-2.com/app/Http/Controllers/OrderController.php(5135): Illuminate\\Database\\Eloquent\\Model::__callStatic('create', Array)
+#16 [internal function]: App\\Http\\Controllers\\OrderController->updateorderstatus(Object(Illuminate\\Http\\Request))
+#17 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#18 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('updateorderstat...', Array)
+#19 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\OrderController), 'updateorderstat...')
+#20 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#21 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
+#22 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(56): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#39 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#42 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#45 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#46 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#47 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#48 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#49 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#50 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#52 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#55 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#56 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#57 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#58 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#59 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#60 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#61 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#62 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#63 /var/www/omsv4-2.com/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#64 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#65 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#66 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#67 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#68 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#69 /var/www/omsv4-2.com/public/index.php(59): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#70 {main}
+"} 
+[2022-05-09 22:55:27] local.ERROR: Undefined variable: weekStartDate {"userId":24,"exception":"[object] (ErrorException(code: 0): Undefined variable: weekStartDate at /var/www/omsv4-2.com/app/Http/Controllers/DashboardController.php:749)
+[stacktrace]
+#0 /var/www/omsv4-2.com/app/Http/Controllers/DashboardController.php(749): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/omsv4-...', 749, Array)
+#1 [internal function]: App\\Http\\Controllers\\DashboardController->ajaxweekdashboard(Object(Illuminate\\Http\\Request))
+#2 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#3 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('ajaxweekdashboa...', Array)
+#4 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\DashboardController), 'ajaxweekdashboa...')
+#5 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
+#7 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#9 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#10 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(56): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#21 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#31 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#32 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#33 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#34 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#35 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#40 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#43 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#46 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 /var/www/omsv4-2.com/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#49 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#52 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#53 /var/www/omsv4-2.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#54 /var/www/omsv4-2.com/public/index.php(59): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#55 {main}
+"} 

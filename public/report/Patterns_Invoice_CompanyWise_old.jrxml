@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2020-07-06T22:04:56 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Patterns_Invoice_CompanyWise" pageWidth="612" pageHeight="1008" whenNoDataType="NoDataSection" columnWidth="598" leftMargin="9" rightMargin="5" topMargin="4" bottomMargin="2" uuid="fb932dfd-5452-45d7-9149-b9286ed9b2a9">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="omslaravel_live"/>
+	<parameter name="PFR_DT" class="java.lang.String"/>
+	<parameter name="PTO_DT" class="java.lang.String"/>
+	<parameter name="P_company_id" class="java.lang.String"/>
+	<parameter name="Param2" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT orders.company_id,
+    orders.client_creation_id,
+	orders.order_id,
+	orders.order_date_time,
+	orders.client_name,
+	orders.client_email_primary,
+	orders.client_company,
+	clients.client_address1,
+	clients.client_state,
+	clients.other_state,
+	clients.client_country,
+	clients.phone,
+	orders.client_note,
+	order_dtls.file_name ,
+	orders.stiches_count,
+	orders.file_price,
+	orders.unit_price,
+	orders.file_type,
+	orders.document_type,
+	orders.order_us_date,
+	orders.bill_dt,
+   IFNULL(trim(orders.note), '-')  as ordernote
+FROM orders, order_dtls, clients
+WHERE 
+	 orders.bill_dt >=  $P{PFR_DT} 
+	 AND orders.bill_dt <= $P{PTO_DT} 
+	 AND orders.company_id = $P{P_company_id} 
+	 $P!{Param2}
+	 AND  orders.id =  order_dtls.master_id
+	 AND  orders.company_id =  clients.company_id
+		Order BY orders.company_id, 
+  orders.order_us_date]]>
+	</queryString>
+	<field name="company_id" class="java.lang.String"/>
+	<field name="client_creation_id" class="java.lang.String"/>
+	<field name="order_id" class="java.lang.String"/>
+	<field name="order_date_time" class="java.sql.Timestamp"/>
+	<field name="client_name" class="java.lang.String"/>
+	<field name="client_email_primary" class="java.lang.String"/>
+	<field name="client_company" class="java.lang.String"/>
+	<field name="client_address1" class="java.lang.String"/>
+	<field name="client_state" class="java.lang.String"/>
+	<field name="other_state" class="java.lang.String"/>
+	<field name="client_country" class="java.lang.String"/>
+	<field name="phone" class="java.lang.String"/>
+	<field name="client_note" class="java.lang.String"/>
+	<field name="file_name" class="java.lang.String"/>
+	<field name="stiches_count" class="java.math.BigDecimal"/>
+	<field name="file_price" class="java.math.BigDecimal"/>
+	<field name="unit_price" class="java.lang.Float"/>
+	<field name="file_type" class="java.lang.String"/>
+	<field name="document_type" class="java.lang.String"/>
+	<field name="order_us_date" class="java.sql.Timestamp"/>
+	<field name="bill_dt" class="java.sql.Date"/>
+	<field name="ordernote" class="java.lang.String"/>
+	<variable name="GTot" class="java.math.BigDecimal" resetType="Group" resetGroup="Comp_Group" calculation="Sum">
+		<variableExpression><![CDATA[$F{file_price}]]></variableExpression>
+	</variable>
+	<variable name="tot_1" class="java.math.BigDecimal" resetType="Group" resetGroup="Group1_client_name" incrementType="Group" incrementGroup="Group1_client_name" calculation="First">
+		<variableExpression><![CDATA[$F{file_price}]]></variableExpression>
+	</variable>
+	<variable name="tot_2" class="java.math.BigDecimal" resetType="Group" resetGroup="Comp_Group" calculation="Sum">
+		<variableExpression><![CDATA[$V{tot_1}]]></variableExpression>
+	</variable>
+	<group name="Comp_Group">
+		<groupExpression><![CDATA[$F{company_id}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band height="31">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<staticText>
+					<reportElement x="284" y="3" width="142" height="23" backcolor="#F7E9C3" uuid="70f39aeb-d678-4354-89ba-5b7c6248ba00"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="12" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Grand Total =>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="441" y="0" width="14" height="26" uuid="7018c2f7-1431-41e1-9de3-3fc75d78cad6"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Verdana" size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[$]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="458" y="0" width="96" height="26" uuid="2ef2120e-0016-4e0a-a4f8-fff188ac2b03"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tot_2}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Group1_client_name" keepTogether="true">
+		<groupExpression><![CDATA[$F{order_id}]]></groupExpression>
+		<groupHeader>
+			<band height="22">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="4" width="175" height="18" isPrintWhenDetailOverflows="true" backcolor="#ADA317" uuid="fbb51f8a-53d3-4e99-8514-b6e43ab9e8b1"/>
+					<box>
+						<pen lineWidth="0.75" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{client_name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="175" y="4" width="87" height="18" backcolor="#ADA317" uuid="25e352b1-e729-407e-93e5-3648c1304c9b"/>
+					<box>
+						<pen lineWidth="0.75" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{order_id}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="FixRelativeToBottom" x="270" y="4" width="73" height="18" backcolor="#ADA317" uuid="e294aeb0-6750-498e-bc84-c97ec566f564"/>
+					<box>
+						<pen lineWidth="0.75"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{file_type}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="FixRelativeToBottom" x="351" y="4" width="41" height="18" backcolor="#ADA317" uuid="6dbc45a4-52db-4b75-ba9d-c4994f04d2ff"/>
+					<box>
+						<pen lineWidth="0.75"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[IF($F{stiches_count}.intValue()>0, $F{stiches_count},"")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="400" y="4" width="82" height="18" uuid="c3464d29-dfc4-4c11-a4ed-a46796ec4080"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[DATEFORMAT($F{order_us_date},"MM/dd/yy HH:mm")]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="FixRelativeToBottom" x="490" y="4" width="97" height="18" backcolor="#ADA317" uuid="287590b8-a505-45ac-a0d0-793856e9dc60"/>
+					<box>
+						<pen lineWidth="0.75"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("00.00").format($F{file_price})]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="233" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="459" y="57" width="123" height="26" uuid="6d0cddb8-8d71-434d-9196-c9bce11e7df4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{tot_2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="445" y="57" width="14" height="26" uuid="36159e4f-4dee-44eb-9852-4a50232d08d6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<image>
+				<reportElement x="8" y="3" width="102" height="77" uuid="029851ef-df50-43a4-a59e-bc3900eace7c"/>
+				<imageExpression><![CDATA["http://192.168.0.30/img/Patterns-Logo-new-180x180.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement key="" mode="Opaque" x="210" y="18" width="120" height="30" forecolor="#B5201D" backcolor="#BACFE6" uuid="7494a405-45da-43f9-9523-7e7a1ed275b3"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVOICE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-6" y="97" width="609" height="1" forecolor="#D15828" uuid="c31cbd8e-7d1d-4d45-9901-8037d3070f84"/>
+			</line>
+			<textField>
+				<reportElement x="200" y="52" width="150" height="27" uuid="64ee879b-060f-4098-97ec-8c52e203696f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[DATEFORMAT(new SimpleDateFormat("yyyy-MM-dd").parse($P{PFR_DT}),"MMM-yyyy")]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch">
+			<image>
+				<reportElement x="16" y="-113" width="26" height="22" uuid="0c5565b7-ee6f-440d-8ed5-cb5d524f7a7b"/>
+				<imageExpression><![CDATA["http://192.168.0.30/img/mail.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="273" y="-129" width="56" height="22" uuid="4aeffa28-ec97-4ec4-8426-62371e0e01f7"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bill to]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="343" y="-98" width="192" height="22" uuid="1abe73ad-d114-4ec7-8e76-6a1c76309a5b"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{client_address1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="343" y="-70" width="192" height="19" uuid="a388d031-a518-4ad6-aa6e-aa9b703c3c6f"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF(($F{client_state}=="other"),$F{other_state},$F{client_state})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="65" y="-110" width="156" height="16" uuid="a11b7bd2-9f5e-4c5f-93ef-d8f3e59fb52e"/>
+				<textElement textAlignment="Left">
+					<font fontName="Verdana" size="12"/>
+				</textElement>
+				<text><![CDATA[info@patternsindia.com]]></text>
+			</staticText>
+			<image>
+				<reportElement x="15" y="-81" width="33" height="28" uuid="d81b7d33-1a1e-4675-802b-2757e198c1b8"/>
+				<imageExpression><![CDATA["http://192.168.0.30/img/phone-icon.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="65" y="-76" width="111" height="15" uuid="3cf9536c-769f-417d-98ca-ec8ac2208a54"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[630-246-6028 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="-43" width="160" height="24" uuid="6aaa833a-c552-4404-a21e-c52708edc690"/>
+				<textElement textAlignment="Left">
+					<font fontName="Verdana" size="12"/>
+				</textElement>
+				<text><![CDATA[www.patterns247.com	]]></text>
+			</staticText>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="260" y="-136" width="2" height="136" forecolor="#D4591C" uuid="eeaa50a6-9dfb-4013-bb1d-2c4ba1385840"/>
+			</line>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="343" y="-129" width="190" height="20" uuid="4ed843f1-ac78-47e1-abe1-eb0980bd0c61"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{client_company}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="16" y="-43" width="32" height="24" uuid="a8978a80-0897-45aa-b5c4-4e315b00e462"/>
+				<imageExpression><![CDATA["http://192.168.0.30/img/websitelogo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="343" y="-44" width="192" height="18" uuid="18c45c19-e9e2-417e-b691-b823af2c05a7"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-10" y="0" width="610" height="1" forecolor="#C46133" uuid="e9813d8d-9a7c-41d7-9079-df67d29081b6"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement mode="Opaque" x="181" y="0" width="84" height="30" forecolor="#000033" backcolor="#7DCBF0" uuid="0bcb8258-d0d9-4367-a890-e97e43502fbf"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="346" y="0" width="52" height="30" forecolor="#000033" backcolor="#7DCBF0" uuid="d6f1de01-3b83-422c-b882-323bf53781e1"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stitch]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="490" y="0" width="110" height="30" forecolor="#000033" backcolor="#7DCBF0" uuid="a85b5d25-0221-41b8-a60a-4224845e4971"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="400" y="0" width="90" height="30" forecolor="#000033" backcolor="#7DCBF0" uuid="e8853c17-7dbd-4c96-a1b4-9b0dbb89b1f3"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="266" y="0" width="78" height="30" forecolor="#000033" backcolor="#7DCBF0" uuid="3cd57d61-5749-4b8b-9113-f6349f21d722"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Filetype]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="100" height="30" forecolor="#000033" backcolor="#7DCBF0" uuid="969e1b30-129d-4e12-81ce-372233591c23"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Client ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="102" y="0" width="77" height="30" forecolor="#000033" backcolor="#7DCBF0" uuid="d00d986a-dda0-4fa9-b70a-26d955d4e071"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Filename]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="90" y="4" width="450" height="16" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#ADA317" uuid="eed07534-8366-4b01-a65f-d05fd2d5751a"/>
+				<box>
+					<pen lineWidth="0.75" lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{file_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="17" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="16" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="60" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<image>
+				<reportElement x="28" y="10" width="50" height="40" uuid="e59f6b88-e10a-42fb-b706-bb766fed39e3"/>
+				<imageExpression><![CDATA["http://192.168.0.30/img/paypal_PNG13.png"]]></imageExpression>
+			</image>
+		</band>
+	</summary>
+</jasperReport>

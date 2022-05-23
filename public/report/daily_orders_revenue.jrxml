@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2021-03-07T01:04:40 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="daily_orders_revenue" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1da260cb-8689-4015-b898-7923d5199d8f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="server10"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="pfr_dt" class="java.lang.String"/>
+	<parameter name="pto_dt" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT orders.bill_dt, orders.client_company,
+    orders.order_id,
+		orders.client_name,
+		orders.client_company,
+	orders.file_name,
+	orders.file_type,
+	orders.stiches_count,
+	orders.file_price,  orders.status
+FROM orders
+where   	 orders.bill_dt >=  $P{pfr_dt} 
+	 and  orders.bill_dt <=  $P{pto_dt} 
+	 	 and   orders.status  in ('Completed' , 'Rev-Completed', 'Ch-Completed')]]>
+	</queryString>
+	<field name="bill_dt" class="java.sql.Date"/>
+	<field name="client_company" class="java.lang.String"/>
+	<field name="order_id" class="java.lang.String"/>
+	<field name="client_name" class="java.lang.String"/>
+	<field name="COLUMN_5" class="java.lang.String"/>
+	<field name="file_name" class="java.lang.String"/>
+	<field name="file_type" class="java.lang.String"/>
+	<field name="stiches_count" class="java.math.BigDecimal"/>
+	<field name="file_price" class="java.math.BigDecimal"/>
+	<field name="status" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="9" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="1" width="134" height="26" uuid="90144172-8e9c-44be-a20f-a5fbe6b9702f"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Orders Revenue ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="27" width="94" height="25" uuid="f9f92f5a-5bbb-4fc5-829d-26e5dea587c3"/>
+				<textElement>
+					<font fontName="Verdana" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pfr_dt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="27" width="94" height="25" uuid="74ba3dc4-1a9f-4dcb-823c-1a329589e340"/>
+				<textElement>
+					<font fontName="Verdana" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pto_dt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="251" y="29" width="28" height="23" uuid="ac4b00a8-bb62-4d06-a484-17b704578a93"/>
+				<textElement>
+					<font fontName="Verdana" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[to]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="-5" y="5" width="57" height="16" uuid="b9af1a1e-e83a-4898-899a-0970e5bd7dcd"/>
+				<textElement>
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bill Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="103" y="6" width="57" height="16" uuid="46e3d0e6-60dc-4ad6-bd86-60c03a25996e"/>
+				<textElement>
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="207" y="8" width="57" height="16" uuid="07e85b99-d6a3-4078-921d-e99433b0e762"/>
+				<textElement>
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Company]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="391" y="8" width="57" height="16" uuid="bc5c306d-2ec5-4d89-81b5-d7940989417a"/>
+				<textElement>
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[File]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="557" y="8" width="57" height="16" uuid="8f5bb312-4ab4-46e0-ab36-080c290a34aa"/>
+				<textElement>
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[File Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="623" y="8" width="57" height="16" uuid="8174438f-da59-4e37-a87c-e0d18ede7437"/>
+				<textElement>
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stiches]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="689" y="8" width="57" height="16" uuid="42bdc1eb-ada5-4638-9965-ca2e227fa12d"/>
+				<textElement>
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="756" y="8" width="57" height="16" uuid="204f5aac-30a2-452f-8223-510955b43e78"/>
+				<textElement>
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="51" splitType="Stretch">
+			<frame>
+				<reportElement x="-10" y="4" width="832" height="26" uuid="80a5e7f8-4132-46e2-9c93-3fc993dc933f"/>
+				<textField>
+					<reportElement x="104" y="0" width="83" height="15" uuid="3ef89862-9381-4530-a944-a616c2b99269"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Verdana" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{order_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="390" y="0" width="180" height="15" uuid="f3c8311b-510f-4d7e-bc95-842bf7f59df1"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Verdana" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{file_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="200" y="0" width="180" height="15" uuid="90fa7170-1065-4d43-9226-700c56d298a6"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Verdana" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{client_company}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="578" y="0" width="52" height="15" uuid="181123b2-ae48-4a5b-9877-c1c643fc55c3"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Verdana" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{file_type}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="686" y="0" width="54" height="15" uuid="983fe7fe-7ccd-4ef8-87ee-2a4216149167"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Verdana" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{file_price}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="640" y="0" width="32" height="15" uuid="207c10d0-8098-4fea-be8f-b87ea28d8353"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Verdana" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stiches_count}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="753" y="-1" width="70" height="15" uuid="b3de0d86-ca04-40fb-9408-8442d9485a82"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Verdana" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="-1" y="3" width="80" height="15" uuid="269d934e-d4e5-4a89-a65b-07669bbcebb3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[DATEFORMAT( $F{bill_dt},"MM/dd/yy ")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

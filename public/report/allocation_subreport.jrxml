@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-04-15T03:16:27 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="allocation_subreport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3bbcf96f-3aae-499d-9eb9-a49c804e6e85">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql_studio_ssl30"/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="true"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="633"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="353"/>
+	<parameter name="order_year_month" class="java.lang.String"/>
+	<parameter name="alloc" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select  allocation,  order_id,  file_type, file_name , note
+from omslaravel56.order_dtls a  where   order_id  in  (select  distinct b.order_id from  omslaravel56.orders_view b
+	where b.file_type= 'Vector'  and b.status = 'Completed'  and a.file_type = b.file_type and a.status = b.status )  and
+  DATE_FORMAT(order_date_time,'%Y%m') = $P{order_year_month}  and allocation  in  ($P{alloc} )]]>
+	</queryString>
+	<field name="allocation" class="java.lang.String"/>
+	<field name="order_id" class="java.lang.String"/>
+	<field name="file_type" class="java.lang.String"/>
+	<field name="file_name" class="java.lang.String"/>
+	<field name="note" class="java.lang.String"/>
+	<variable name="tot_count" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[new Integer($F{file_type}.equals("Vector") ? 1 : 0)]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="-5" y="27" width="100" height="30" uuid="02ef6711-1ef5-4066-b5d7-16407354ee79"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="28" width="100" height="30" uuid="50eb7398-6a3a-4560-93ca-dea5506a436b"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[File Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="29" width="100" height="30" uuid="fe57eae5-0439-4a33-ac84-de62116153c0"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[File Note]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="28" width="100" height="30" uuid="70ad318c-f041-416c-913b-852189c533e4"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Allocation]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="-10" y="5" width="114" height="30" uuid="de86b366-6d77-4870-9114-66538dac7d6c"/>
+				<textFieldExpression><![CDATA[$F{order_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="7" width="128" height="30" uuid="ddeb2278-0f0c-4eda-80a1-ddf76512e5dc"/>
+				<textFieldExpression><![CDATA[$F{file_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="7" width="183" height="30" uuid="5a6e24cf-b6a8-47bd-9d95-aacfdb2f660c"/>
+				<textFieldExpression><![CDATA[$F{note}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="251" y="8" width="115" height="30" uuid="94baf171-6eaf-401d-a722-678eb37c1be0"/>
+				<textFieldExpression><![CDATA[$F{allocation}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="4" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="5" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="366" y="3" width="100" height="30" uuid="41815777-2a84-4d9d-a578-ea89cf5f693a"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{tot_count}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="187" y="4" width="163" height="30" uuid="00849676-2a0e-427d-bed7-bdc0e92ebf75"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Total Files Completed :]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
