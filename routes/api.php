@@ -35,4 +35,3 @@ Route::post('unassignclicknewcompany', 'Api\CwordpressController@unassignclickne
  *  api route for inactive orders
  */
 Route::post('clientdata', 'Api\CwordpressController@clientApi');
-Route::get('query','Api\CwordpressController@query');

@@ -766,32 +766,6 @@ class CwordpressController extends Controller
                 $dateEnd = Carbon::now()->format('Y-m-d');
               }
             }
-        /*
-        $data = DB::table('clients')
-                ->leftJoin('client_dtls', 'clients.id', '=', 'client_dtls.client_id')
-                ->leftJoin('orders', 'clients.email', '=', 'orders.client_email_primary')
-                ->leftJoin("order_dtls","orders.id",'=',"order_dtls.master_id")
-                ->select(
-                'clients.id',
-                'clients.client_company',
-                'clients.phone',
-                'clients.client_state',
-                'clients.client_country',
-                'clients.timezone_type',
-                DB::raw('SUBSTRING(clients.lastdisposition,1,50) AS lastdispo'),
-                'clients.company_id',
-                'clients.salseuser',
-                'clients.salseassignuser',
-                DB::raw('group_concat(client_dtls.client_name) AS cdclient_name')
-                )
-                ->where([
-                ['clients.delete_flag', '=', 'N'],
-                ['clients.red_list', '=', 'N'],
-                ['clients.client_country', '=', "US"],
-                ['clients.lastdisposition', '!=', ' '],
-                ['clients.store_type', '=', 'Retail']
-                ])
-                */
 
                 $data = Client::select(
                 'clients.id',
@@ -854,25 +828,6 @@ class CwordpressController extends Controller
                         $dateEnd = Carbon::now()->format('Y-m-d');
                       }
                     }
-                    /*
-                  $data = DB::table('clients')
-                ->leftJoin('client_dtls', 'clients.id', '=', 'client_dtls.client_id')
-                ->leftJoin('orders', 'clients.email', '=', 'orders.client_email_primary')
-                ->leftJoin("order_dtls","orders.id",'=',"order_dtls.master_id")
-                ->select(
-                'clients.id',
-                'clients.client_company',
-                'clients.phone',
-                'clients.client_state',
-                'clients.client_country',
-                'clients.timezone_type',
-                DB::raw('SUBSTRING(clients.lastdisposition,1,50) AS lastdispo'),
-                'clients.company_id',
-                'clients.salseuser',
-                'clients.salseassignuser',
-                DB::raw('group_concat(client_dtls.client_name) AS cdclient_name')
-                )
-                */
                 
                 $data = Client::select(
                 'clients.id',
@@ -895,11 +850,6 @@ class CwordpressController extends Controller
                   ])
                   ->whereIN('clients.company_id', $ed)
                   ->whereNotBetween('orders.bill_dt',[$dateStart,$dateEnd])
-                //  ->whereNotBetween('orders.order_us_date',[$dateStart, Carbon::now()])
-                 // ->whereNotBetween('orders.order_us_date',['2020-06-20 08:00:54', '2020-06-21 14:00:54'])
-               //   ->whereNotBetween('orders.bill_dt',[date('2020-06-17'),date('2021-06-21')])
-                  //->where('orders.bill_dt','>=','2020-06-20')
-               //   ->where('orders.order_id','=','PO201806300013')
                   
                 ->leftJoin('client_dtls', 'clients.id', '=', 'client_dtls.client_id')
                 ->leftJoin('orders', 'clients.email', '=', 'orders.client_email_primary')
@@ -1050,25 +1000,6 @@ class CwordpressController extends Controller
                       $dateEnd = Carbon::now()->format('Y-m-d');
                     }
                     }
-                    /*
-                    $data = DB::table('clients')
-                            ->leftJoin('client_dtls', 'clients.id', '=', 'client_dtls.client_id')
-                            ->leftJoin('orders', 'clients.email', '=', 'orders.client_email_primary')
-                            ->leftJoin("order_dtls","orders.id",'=',"order_dtls.master_id")
-                            ->select(
-                              'clients.id',
-                              'clients.client_company',
-                              'clients.phone',
-                              'clients.client_state',
-                              'clients.client_country',
-                              'clients.timezone_type',
-                              DB::raw('SUBSTRING(clients.lastdisposition,1,50) AS lastdispo'),
-                              'clients.company_id',
-                              'clients.salseuser',
-                              'clients.salseassignuser',
-                              DB::raw('group_concat(client_dtls.client_name) AS cdclient_name')
-                              )
-                              */
                               $data = Client::select(
                                 'clients.id',
                                 'clients.client_company',
@@ -1896,99 +1827,5 @@ class CwordpressController extends Controller
     return $data;
   }
 
-  public function query(){
-
-    $revisions = DB::select('select
-            c.order_id,
-            c.target_date,
-            c.new_notes,
-            c.mistake_by,
-            c.designer,
-            c.teamleader,
-            c.reason,
-            c.user_name,
-            c.last_status,
-            c.created_at,
-            c.file_name,
-            d.mis,
-            d.reas,
-            d.des,
-            d.team,
-            d.last,
-            d.user
-        from (
-            select
-                a.order_id,
-                a.target_date,
-                a.new_notes,
-                a.mistake_by,
-                a.designer,
-                a.teamleader,
-                a.reason,
-                a.user_name,
-                a.last_status,
-                a.created_at,
-                b.file_name
-            from
-                file_reason a,
-                orders b
-            where
-                a.last_status = "Revision" and a.created_at between :start and :end and a.order_id = b.order_id
-            order by
-                a.id
-            desc
-        ) as c
-        inner join
-            (
-            select
-                mistake_by as mis,
-                reason as reas,
-                designer as des,
-                teamleader as team,
-                last_status as last,
-                user_name as user,
-                order_id
-            from
-                file_reason
-            where
-                last_status = "Rev-QC OK"
-        ) as d
-        on
-            c.order_id = d.order_id
-        order by
-            c.order_id asc', ['start' => '2022-04-01', 'end' => '2022-05-20']);
-
-           // return $revisions;
-
-return $dbquery=FileReason::join('orders','file_reason.order_id','=','orders.order_id')
-->select('orders.order_id',
-'file_reason.target_date',
-'file_reason.new_notes',
-'file_reason.mistake_by',
-'file_reason.designer',
-'file_reason.teamleader',
-'file_reason.reason',
-'file_reason.user_name',
-'orders.file_name',
-'file_reason.last_status',
-'file_reason.created_at')
-->whereBetween('file_reason.created_at', ['2022-04-01', '2022-05-20'])
-->whereIn('file_reason.last_status', array("Revision","Rev-QC OK"))
-->get();
-
-
-  }
-
-
-/*
-,
-orders.file_name,
-orders.mis,
-orders.reas,
-orders.des,
-orders.team,
-orders.last,
-orders.user
-*/
 
 }
